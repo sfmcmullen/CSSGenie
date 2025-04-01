@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>CSSGenie</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <main>
+            <!-- Intro Section -->
+            <section id="intro">
+                <h1>CSSGenie</h1>
+                <p>Welcome to CSSGenie, a tool that helps you generate CSS code for your website. Customize properties and values and then copy the generated CSS code for your site.</p>
+            </section>
+
+            <!-- Properties Selectors -->
+            <section id="properties-selectors-wrapper">
+                <!-- Typography Section -->
+                <div class="properties-selectors" id="typography">
+                    <h2>Typography</h2>
+                    <div class="input-group">
+                        <label for="font-family">Font Family</label>
+                        <select id="font-family">
+                            <!-- Options loaded dynamically -->
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="font-size">Font Size (px)</label>
+                        <input type="number" id="font-size" placeholder="Font Size" min="1" max="100">
+                    </div>
+                    <div class="input-group">
+                        <label for="font-weight">Font Weight</label>
+                        <select id="font-weight">
+                            <!-- Options loaded dynamically -->
+                        </select>
+                    </div>
+                    <fieldset class="input-group">
+                        <legend>Text Align</legend>
+                        <input type="radio" name="text-align" value="left" id="align-left">
+                        <label for="align-left">Left</label>
+                        <input type="radio" name="text-align" value="center" id="align-center">
+                        <label for="align-center">Center</label>
+                        <input type="radio" name="text-align" value="right" id="align-right">
+                        <label for="align-right">Right</label>
+                        <input type="radio" name="text-align" value="justify" id="align-justify">
+                        <label for="align-justify">Justify</label>
+                    </fieldset>
+                </div>
+
+                <!-- Colours Section -->
+                <div class="properties-selectors" id="colours">
+                    <h2>Colours</h2>
+                    <div class="input-group">
+                        <label for="primary-colour">Primary Colour</label>
+                        <input type="color" id="primary-colour" value="#000000">
+                        <button class="randomise-btn" data-target="primary-colour">
+                            <img src="images/dice-1.png" alt="Randomise">
+                        </button>
+                    </div>
+                    <div class="input-group">
+                        <label for="secondary-colour">Secondary Colour</label>
+                        <input type="color" id="secondary-colour" value="#000000">
+                        <button class="randomise-btn" data-target="secondary-colour">
+                            <img src="images/dice-1.png" alt="Randomise">
+                        </button>
+                    </div>
+                    <div class="input-group">
+                        <label for="tertiary-colour">Tertiary Colour</label>
+                        <input type="color" id="tertiary-colour" value="#000000">
+                        <button class="randomise-btn" data-target="tertiary-colour">
+                            <img src="images/dice-1.png" alt="Randomise">
+                        </button>
+                    </div>
+                    <div class="input-group">
+                        <label for="background-colour">Background Colour</label>
+                        <input type="color" id="background-colour" value="#ffffff">
+                        <button class="randomise-btn" data-target="background-colour">
+                            <img src="images/dice-1.png" alt="Randomise">
+                        </button>
+                    </div>
+                    <div class="input-group">
+                        <label for="text-colour">Text Colour</label>
+                        <input type="color" id="text-colour" value="#000000">
+                        <button class="randomise-btn" data-target="text-colour">
+                            <img src="images/dice-1.png" alt="Randomise">
+                        </button>
+                    </div>
+                    <div class="input-group">
+                        <label for="border-colour-global">Global Border Colour</label>
+                        <input type="color" id="border-colour-global" value="#000000">
+                        <button class="randomise-btn" data-target="border-colour-global">
+                            <img src="images/dice-1.png" alt="Randomise">
+                        </button>
+                    </div>
+                    <div class="input-group">
+                        <button id="randomise-all-colours" class="randomise-btn" data-target="all">
+                            <img src="images/dice-1.png" alt="Randomise All">
+                        </button>
+                        <label for="randomise-all-colours">Randomise All Colours</label>
+                    </div>
+                </div>
+
+                <!-- Spacing and Layout Section -->
+                <div class="properties-selectors" id="spacing-layout">
+                    <h2>Spacing and Layout</h2>
+                    <fieldset class="input-group">
+                        <legend>Padding (px)</legend>
+                        <label for="padding-top">Top</label>
+                        <input type="number" id="padding-top" placeholder="Top" min="0" max="100">
+                        <label for="padding-right">Right</label>
+                        <input type="number" id="padding-right" placeholder="Right" min="0" max="100">
+                        <label for="padding-bottom">Bottom</label>
+                        <input type="number" id="padding-bottom" placeholder="Bottom" min="0" max="100">
+                        <label for="padding-left">Left</label>
+                        <input type="number" id="padding-left" placeholder="Left" min="0" max="100">
+                    </fieldset>
+
+                    <fieldset class="input-group">
+                        <legend>Margin (px)</legend>
+                        <label for="margin-top">Top</label>
+                        <input type="number" id="margin-top" placeholder="Top" min="0" max="100">
+                        <label for="margin-right">Right</label>
+                        <input type="number" id="margin-right" placeholder="Right" min="0" max="100">
+                        <label for="margin-bottom">Bottom</label>
+                        <input type="number" id="margin-bottom" placeholder="Bottom" min="0" max="100">
+                        <label for="margin-left">Left</label>
+                        <input type="number" id="margin-left" placeholder="Left" min="0" max="100">
+                    </fieldset>
+
+                    <fieldset class="input-group">
+                        <legend>Border</legend>
+                        <div>
+                            <label for="border-colour">Border Colour</label>
+                            <input type="color" id="border-colour" value="#000000">
+                            <button class="randomise-btn" data-target="border-colour">
+                                <img src="images/dice-1.png" alt="Randomise">
+                            </button>
+                        </div>
+                        <div>
+                            <label for="border-style">Border Style</label>
+                            <select id="border-style">
+                                <option value="none">None</option>
+                                <option value="solid">Solid</option>
+                                <option value="dashed">Dashed</option>
+                                <option value="dotted">Dotted</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="border-width">Border Width (px)</label>
+                            <input type="number" id="border-width" placeholder="Width" min="0" max="100">
+                        </div>
+                        <div>
+                            <label for="border-radius">Border Radius (px)</label>
+                            <input type="number" id="border-radius" placeholder="Radius" min="0" max="100">
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="input-group">
+                        <legend>Box Shadow</legend>
+                        <div>
+                            <label for="box-shadow-colour">Shadow Colour</label>
+                            <input type="color" id="box-shadow-colour" value="#000000">
+                            <button class="randomise-btn" data-target="box-shadow-colour">
+                                <img src="images/dice-1.png" alt="Randomise">
+                            </button>
+                        </div>
+                        <div>
+                            <label for="box-shadow-offset-top">Offset Top (px)</label>
+                            <input type="number" id="box-shadow-offset-top" placeholder="Top" min="0" max="100">
+                        </div>
+                        <div>
+                            <label for="box-shadow-offset-right">Offset Right (px)</label>
+                            <input type="number" id="box-shadow-offset-right" placeholder="Right" min="0" max="100">
+                        </div>
+                        <div>
+                            <label for="box-shadow-offset-bottom">Offset Bottom (px)</label>
+                            <input type="number" id="box-shadow-offset-bottom" placeholder="Bottom" min="0" max="100">
+                        </div>
+                        <div>
+                            <label for="box-shadow-offset-left">Offset Left (px)</label>
+                            <input type="number" id="box-shadow-offset-left" placeholder="Left" min="0" max="100">
+                        </div>
+                        <div>
+                            <label for="box-shadow-strength">Shadow Strength (px)</label>
+                            <input type="number" id="box-shadow-strength" placeholder="Strength" min="0" max="100">
+                        </div>
+                    </fieldset>
+                </div>
+
+                <!-- Element Specific Styling Section -->
+                <div class="properties-selectors" id="element-specific">
+                    <h2>Element Specific Styling [Optional]</h2>
+                    <!-- Button Styling -->
+                    <fieldset class="input-group">
+                        <legend>
+                            <input type="checkbox" id="custom-button-styles">
+                            <label for="custom-button-styles">Custom Button Styling</label>
+                        </legend>
+                        <div>
+                            <label for="button-colour">Button Colour</label>
+                            <input type="color" id="button-colour" value="#000000">
+                            <button class="randomise-btn" data-target="button-colour">
+                                <img src="images/dice-1.png" alt="Randomise">
+                            </button>
+                        </div>
+                        <div>
+                            <label for="button-text-colour">Button Text Colour</label>
+                            <input type="color" id="button-text-colour" value="#000000">
+                            <button class="randomise-btn" data-target="button-text-colour">
+                                <img src="images/dice-1.png" alt="Randomise">
+                            </button>
+                        </div>
+                        <div>
+                            <label for="button-hover-colour">Button Hover Colour</label>
+                            <input type="color" id="button-hover-colour" value="#000000">
+                            <button class="randomise-btn" data-target="button-hover-colour">
+                                <img src="images/dice-1.png" alt="Randomise">
+                            </button>
+                        </div>
+                        <div>
+                            <label for="button-hover-text-colour">Button Hover Text Colour</label>
+                            <input type="color" id="button-hover-text-colour" value="#000000">
+                            <button class="randomise-btn" data-target="button-hover-text-colour">
+                                <img src="images/dice-1.png" alt="Randomise">
+                            </button>
+                        </div>
+                        <fieldset>
+                            <legend>Padding (px)</legend>
+                            <label for="button-padding-top">Top</label>
+                            <input type="number" id="button-padding-top" placeholder="Top" min="0" max="100">
+                            <label for="button-padding-right">Right</label>
+                            <input type="number" id="button-padding-right" placeholder="Right" min="0" max="100">
+                            <label for="button-padding-bottom">Bottom</label>
+                            <input type="number" id="button-padding-bottom" placeholder="Bottom" min="0" max="100">
+                            <label for="button-padding-left">Left</label>
+                            <input type="number" id="button-padding-left" placeholder="Left" min="0" max="100">
+                        </fieldset>
+                    </fieldset>
+
+                    <!-- Input Field Styling -->
+                    <fieldset class="input-group">
+                        <legend>
+                            <input type="checkbox" id="custom-input-styles">
+                            <label for="custom-input-styles">Custom Input Styling</label>
+                        </legend>
+                        <div>
+                            <label for="input-colour">Input Colour</label>
+                            <input type="color" id="input-colour" value="#000000">
+                            <button class="randomise-btn" data-target="input-colour">
+                                <img src="images/dice-1.png" alt="Randomise">
+                            </button>
+                        </div>
+                        <div>
+                            <label for="input-text-colour">Input Text Colour</label>
+                            <input type="color" id="input-text-colour" value="#000000">
+                            <button class="randomise-btn" data-target="input-text-colour">
+                                <img src="images/dice-1.png" alt="Randomise">
+                            </button>
+                        </div>
+                        <div>
+                            <label for="input-border-colour">Input Border Colour</label>
+                            <input type="color" id="input-border-colour" value="#000000">
+                            <button class="randomise-btn" data-target="input-border-colour">
+                                <img src="images/dice-1.png" alt="Randomise">
+                            </button>
+                        </div>
+                        <fieldset>
+                            <legend>Padding (px)</legend>
+                            <label for="input-padding-top">Top</label>
+                            <input type="number" id="input-padding-top" placeholder="Top" min="0" max="100">
+                            <label for="input-padding-right">Right</label>
+                            <input type="number" id="input-padding-right" placeholder="Right" min="0" max="100">
+                            <label for="input-padding-bottom">Bottom</label>
+                            <input type="number" id="input-padding-bottom" placeholder="Bottom" min="0" max="100">
+                            <label for="input-padding-left">Left</label>
+                            <input type="number" id="input-padding-left" placeholder="Left" min="0" max="100">
+                        </fieldset>
+                    </fieldset>
+
+                    <!-- Textarea Styling -->
+                    <fieldset class="input-group">
+                        <legend>
+                            <input type="checkbox" id="custom-textarea-styles">
+                            <label for="custom-textarea-styles">Custom Textarea Styling</label>
+                        </legend>
+                        <div>
+                            <label for="textarea-colour">Textarea Colour</label>
+                            <input type="color" id="textarea-colour" value="#000000">
+                            <button class="randomise-btn" data-target="textarea-colour">
+                                <img src="images/dice-1.png" alt="Randomise">
+                            </button>
+                        </div>
+                        <div>
+                            <label for="textarea-text-colour">Textarea Text Colour</label>
+                            <input type="color" id="textarea-text-colour" value="#000000">
+                            <button class="randomise-btn" data-target="textarea-text-colour">
+                                <img src="images/dice-1.png" alt="Randomise">
+                            </button>
+                        </div>
+                        <div>
+                            <label for="textarea-border-colour">Textarea Border Colour</label>
+                            <input type="color" id="textarea-border-colour" value="#000000">
+                            <button class="randomise-btn" data-target="textarea-border-colour">
+                                <img src="images/dice-1.png" alt="Randomise">
+                            </button>
+                        </div>
+                        <fieldset>
+                            <legend>Padding (px)</legend>
+                            <label for="textarea-padding-top">Top</label>
+                            <input type="number" id="textarea-padding-top" placeholder="Top" min="0" max="100">
+                            <label for="textarea-padding-right">Right</label>
+                            <input type="number" id="textarea-padding-right" placeholder="Right" min="0" max="100">
+                            <label for="textarea-padding-bottom">Bottom</label>
+                            <input type="number" id="textarea-padding-bottom" placeholder="Bottom" min="0" max="100">
+                            <label for="textarea-padding-left">Left</label>
+                            <input type="number" id="textarea-padding-left" placeholder="Left" min="0" max="100">
+                        </fieldset>
+                    </fieldset>
+
+                    <!-- Link Styling -->
+                    <fieldset class="input-group">
+                        <legend>
+                            <input type="checkbox" id="custom-link-styles">
+                            <label for="custom-link-styles">Custom Link Styling</label>
+                        </legend>
+                        <div>
+                            <label for="link-colour">Link Colour</label>
+                            <input type="color" id="link-colour" value="#000000">
+                            <button class="randomise-btn" data-target="link-colour">
+                                <img src="images/dice-1.png" alt="Randomise">
+                            </button>
+                        </div>
+                        <div>
+                            <label for="link-hover-colour">Link Hover Colour</label>
+                            <input type="color" id="link-hover-colour" value="#000000">
+                            <button class="randomise-btn" data-target="link-hover-colour">
+                                <img src="images/dice-1.png" alt="Randomise">
+                            </button>
+                        </div>
+                    </fieldset>
+
+                    <!-- Image Styling -->
+                    <fieldset class="input-group">
+                        <legend>
+                            <input type="checkbox" id="custom-image-styles">
+                            <label for="custom-image-styles">Custom Image Styling</label>
+                        </legend>
+                        <div>
+                            <label for="image-width">Image Width (%)</label>
+                            <input type="number" id="image-width" placeholder="Width" min="0" max="100">
+                        </div>
+                        <div>
+                            <label for="image-height">Image Height (%)</label>
+                            <input type="number" id="image-height" placeholder="Height" min="0" max="100">
+                        </div>
+                        <div>
+                            <label for="image-border-radius">Image Border Radius (px)</label>
+                            <input type="number" id="image-border-radius" placeholder="Radius" min="0" max="100">
+                        </div>
+                    </fieldset>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>
